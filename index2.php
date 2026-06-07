@@ -1,0 +1,300 @@
+<?php
+$empresa = [
+    "nombre" => "AgileWeb Solutions",
+    "slogan" => "Desarrollo de software de alta velocidad, sin fricciones.",
+    "descripcion" => "Creamos plataformas web robustas, optimizadas y a la medida de tu negocio, utilizando metodologías ágiles que garantizan entregas en tiempo récord."
+];
+
+$contacto_directo = [
+    "whatsapp" => [
+        "base_url" => "https://wa.me/584147197696", 
+        "numero" => "+58 (414) 719-7696"
+    ],
+    "redes" => [
+        [
+            "nombre" => "Facebook",
+            "url" => "#",
+            "icono" => '<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>'
+        ],
+        [
+            "nombre" => "Instagram",
+            "url" => "https://instagram.com/solucionesagiles",
+            "icono" => '<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>'
+        ]
+    ]
+];
+
+$servicios = [
+    [
+        "icono" => "⚡",
+        "titulo" => "Desarrollo Ultra Rápido",
+        "descripcion" => "Lanzamos MVP funcionales en semanas, no en meses, usando tecnologías modernas."
+    ],
+    [
+        "icono" => "🛠️",
+        "titulo" => "Arquitectura Escalable",
+        "descripcion" => "Código limpio, modular y preparado para soportar el crecimiento de tu negocio."
+    ],
+    [
+        "icono" => "📈",
+        "titulo" => "Optimización y SEO",
+        "descripcion" => "Velocidad de carga impecable y estructura pensada para dominar los buscadores."
+    ]
+];
+
+$testimonios = [
+    [
+        "texto" => "Transformaron nuestra idea en una plataforma web en tiempo récord. El enfoque ágil realmente se nota en cada entrega.",
+        "autor" => "Carlos Mendoza",
+        "puesto" => "CTO, FinTech Latam"
+    ],
+    [
+        "texto" => "Excelente comunicación y un código impecable. Entendieron nuestras necesidades desde el día uno.",
+        "autor" => "Elena Rostova",
+        "puesto" => "Directora de Producto, SaaS Innovate"
+    ]
+];
+
+// Helper para armar links dinámicos de WhatsApp
+$whatsapp_default_url = $contacto_directo['whatsapp']['base_url'] . "?text=" . urlencode("Hola, estoy interesado en una solución web ágil.");
+?>
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $empresa['nombre']; ?> | Soluciones Web Ágiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sobrio: {
+                            900: '#0f172a', // Pizarra muy oscuro (Fondo principal)
+                            800: '#1e293b', // Pizarra oscuro (Tarjetas)
+                            700: '#334155', // Bordes
+                            300: '#cbd5e1', // Texto secundario
+                            100: '#f8fafc', // Texto principal
+                            accent: '#3b82f6', // Azul eléctrico (CTA)
+                            whatsapp: '#22c55e' // Verde WhatsApp corporativo
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff10">
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body class="bg-sobrio-900 text-sobrio-100 font-sans antialiased selection:bg-sobrio-accent selection:text-white pb-12 md:pb-0">
+
+    <a href="<?php echo $whatsapp_default_url; ?>" target="_blank" rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-sobrio-whatsapp hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-2xl transition-all transform hover:scale-105 active:scale-95 group font-medium text-sm">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.4.01 12.008.01c3.202.001 6.212 1.246 8.477 3.516 2.266 2.27 3.51 5.284 3.508 8.486-.005 6.653-5.346 11.99-11.956 11.99-2.005-.001-3.975-.502-5.717-1.454L0 24zm6.59-4.846c1.66.986 3.294 1.491 5.353 1.493 5.383 0 9.765-4.382 9.769-9.764.002-2.607-1.012-5.059-2.859-6.908C17.006 2.125 14.55 1.11 11.997 1.11c-5.394 0-9.778 4.384-9.782 9.767-.002 2.012.52 3.977 1.513 5.669l-.955 3.493 3.574-.937zm11.366-5.833c-.3-.15-1.771-.875-2.042-.974-.271-.1-.468-.15-.665.15-.197.3-.765.974-.938 1.173-.173.2-.346.225-.646.075-.3-.15-1.265-.467-2.41-1.487-.892-.795-1.493-1.778-1.668-2.078-.175-.3-.018-.463.13-.612.134-.133.3-.349.45-.524.149-.174.199-.299.299-.499.1-.2.05-.375-.025-.525-.075-.15-.665-1.601-.91-2.193-.239-.574-.483-.497-.665-.506-.171-.008-.368-.01-.565-.01-.197 0-.517.074-.787.374-.27.3-1.033 1.01-1.033 2.463 0 1.453 1.057 2.859 1.205 3.059.148.2 2.08 3.177 5.039 4.454.704.304 1.254.486 1.681.622.707.225 1.35.193 1.859.118.567-.084 1.771-.724 2.018-1.423.247-.699.247-1.299.173-1.424-.074-.125-.27-.2-.57-.35z"/>
+        </svg>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 ease-in-out whitespace-nowrap">
+            ¿Hablamos?
+        </span>
+    </a>
+
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-sobrio-900/80 border-b border-sobrio-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                <span class="text-sobrio-accent">&lt;/&gt;</span> <?php echo $empresa['nombre']; ?>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-sobrio-300">
+                <a href="#servicios" class="hover:text-sobrio-accent transition-colors">Servicios</a>
+                <a href="#testimonios" class="hover:text-sobrio-accent transition-colors">Testimonios</a>
+                <a href="#contacto" class="hover:text-sobrio-accent transition-colors">Contacto</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex items-center gap-3 text-sobrio-300 border-r border-sobrio-800 pr-4">
+                    <?php foreach ($contacto_directo['redes'] as $red): ?>
+                        <a href="<?php echo $red['url']; ?>" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" title="<?php echo $red['nombre']; ?>">
+                            <?php echo $red['icono']; ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+                <a href="#contacto" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-sobrio-accent hover:bg-blue-600 rounded-lg transition-colors shadow-lg shadow-blue-500/10">
+                    Hablemos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative py-20 lg:py-32 overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-medium bg-sobrio-accent/10 text-sobrio-accent border border-sobrio-accent/20 mb-6">
+                    Metodología Ágil • Desarrollo Premium
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight max-w-4xl mx-auto leading-tight">
+                    <?php echo $empresa['slogan']; ?>
+                </h1>
+                <p class="mt-6 text-lg sm:text-xl text-sobrio-300 max-w-2xl mx-auto font-light leading-relaxed">
+                    <?php echo $empresa['descripcion']; ?>
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contacto" class="px-6 py-3 text-base font-medium text-white bg-sobrio-accent hover:bg-blue-600 rounded-lg transition-all shadow-xl shadow-blue-500/20">
+                        Iniciar Proyecto
+                    </a>
+                    <a href="<?php echo $whatsapp_default_url; ?>" target="_blank" rel="noopener noreferrer" class="px-6 py-3 text-base font-medium text-white bg-sobrio-800 hover:bg-sobrio-700 rounded-lg border border-sobrio-700 transition-all flex items-center justify-center gap-2">
+                        <span class="text-sobrio-whatsapp">●</span> Contacto Inmediato
+                    </a>
+                </div>
+            </div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+        </section>
+
+        <hr class="border-sobrio-800 max-w-5xl mx-auto">
+
+        <section id="servicios" class="py-20 lg:py-28">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold text-white tracking-tight sm:text-4xl">Cómo ayudamos a tu negocio</h2>
+                    <p class="mt-4 text-sobrio-300">Soluciones de ingeniería web enfocadas en rendimiento, experiencia de usuario y resultados de negocio.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <?php foreach ($servicios as $servicio): ?>
+                        <div class="bg-sobrio-800/50 border border-sobrio-800 p-8 rounded-2xl hover:border-sobrio-700 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-sobrio-900 flex items-center justify-center text-2xl border border-sobrio-700 mb-6 group-hover:scale-110 transition-transform">
+                                <?php echo $servicio['icono']; ?>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3"><?php echo $servicio['titulo']; ?></h3>
+                            <p class="text-sobrio-300 text-sm leading-relaxed"><?php echo $servicio['descripcion']; ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="py-20 lg:py-28 bg-sobrio-800/30 border-y border-sobrio-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold text-white tracking-tight">Garantía de confianza</h2>
+                    <p class="mt-4 text-sobrio-300">Lo que dicen los líderes tecnológicos que ya trabajan con nosotros.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <?php foreach ($testimonios as $testimonio): ?>
+                        <div class="bg-sobrio-900 border border-sobrio-800 p-8 rounded-2xl flex flex-col justify-between">
+                            <p class="text-sobrio-300 italic font-light leading-relaxed mb-6">
+                                "<?php echo $testimonio['texto']; ?>"
+                            </p>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm"><?php echo $testimonio['autor']; ?></h4>
+                                <p class="text-sobrio-accent text-xs mt-0.5"><?php echo $testimonio['puesto']; ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-20 lg:py-32 relative">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 text-left">
+                        <h2 class="text-3xl font-bold text-white tracking-tight sm:text-4xl">¿Listo para comenzar?</h2>
+                        <p class="mt-4 text-sobrio-300 text-sm sm:text-base leading-relaxed">
+                            Hemos eliminado las barreras. Cuéntanos tu idea directamente por nuestros canales oficiales.
+                        </p>
+                        
+                        <div class="mt-8 p-5 bg-sobrio-800/60 border border-sobrio-800 rounded-xl flex items-center justify-between group hover:border-sobrio-700 transition-all">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-sobrio-whatsapp/10 flex items-center justify-center text-sobrio-whatsapp">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.4.01 12.008.01c3.202.001 6.212 1.246 8.477 3.516 2.266 2.27 3.51 5.284 3.508 8.486-.005 6.653-5.346 11.99-11.956 11.99-2.005-.001-3.975-.502-5.717-1.454L0 24zm6.59-4.846c1.66.986 3.294 1.491 5.353 1.493 5.383 0 9.765-4.382 9.769-9.764.002-2.607-1.012-5.059-2.859-6.908C17.006 2.125 14.55 1.11 11.997 1.11c-5.394 0-9.778 4.384-9.782 9.767-.002 2.012.52 3.977 1.513 5.669l-.955 3.493 3.574-.937zm11.366-5.833c-.3-.15-1.771-.875-2.042-.974-.271-.1-.468-.15-.665.15-.197.3-.765.974-.938 1.173-.173.2-.346.225-.646.075-.3-.15-1.265-.467-2.41-1.487-.892-.795-1.493-1.778-1.668-2.078-.175-.3-.018-.463.13-.612.134-.133.3-.349.45-.524.149-.174.199-.299.299-.499.1-.2.05-.375-.025-.525-.075-.15-.665-1.601-.91-2.193-.239-.574-.483-.497-.665-.506-.171-.008-.368-.01-.565-.01-.197 0-.517.074-.787.374-.27.3-1.033 1.01-1.033 2.463 0 1.453 1.057 2.859 1.205 3.059.148.2 2.08 3.177 5.039 4.454.704.304 1.254.486 1.681.622.707.225 1.35.193 1.859.118.567-.084 1.771-.724 2.018-1.423.247-.699.247-1.299.173-1.424-.074-.125-.27-.2-.57-.35z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-sobrio-300">WhatsApp Oficial</p>
+                                    <p class="text-sm font-semibold text-white"><?php echo $contacto_directo['whatsapp']['numero']; ?></p>
+                                </div>
+                            </div>
+                            <a href="<?php echo $whatsapp_default_url; ?>" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-sobrio-whatsapp hover:underline flex items-center gap-1">
+                                Chat ↗
+                            </a>
+                        </div>
+
+                        <div class="mt-6">
+                            <p class="text-xs font-semibold text-sobrio-700 tracking-wider uppercase mb-3">Redes Sociales</p>
+                            <div class="flex gap-3">
+                                <?php foreach ($contacto_directo['redes'] as $red): ?>
+                                    <a href="<?php echo $red['url']; ?>" target="_blank" rel="noopener noreferrer" 
+                                       class="w-10 h-10 rounded-lg bg-sobrio-800 border border-sobrio-700 flex items-center justify-center text-sobrio-300 hover:text-white hover:border-sobrio-accent transition-all"
+                                       title="<?php echo $red['nombre']; ?>">
+                                         <?php echo $red['icono']; ?>
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 bg-sobrio-800/40 border border-sobrio-800 p-8 rounded-2xl">
+                        <p class="text-sm font-semibold text-white mb-2">Cuéntanos brevemente tu requerimiento:</p>
+                        <p class="text-xs text-sobrio-300 mb-4">Se abrirá la aplicación de WhatsApp de forma segura con tu mensaje pre-redactado.</p>
+                        
+                        <form onsubmit="redirectToWhatsApp(event)" class="space-y-4">
+                            <div>
+                                <textarea id="wp-message" required rows="3" 
+                                          placeholder="Ej: Hola, necesito cotizar un sistema web a la medida para mi empresa..." 
+                                          class="w-full px-4 py-3 text-sm bg-sobrio-900 border border-sobrio-700 rounded-lg text-white placeholder-sobrio-700 focus:outline-none focus:ring-2 focus:ring-sobrio-accent focus:border-transparent transition-all resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full px-6 py-3 text-sm font-medium text-white bg-sobrio-whatsapp hover:bg-green-600 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-green-500/10">
+                                Enviar a WhatsApp Directo
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-sobrio-800 bg-sobrio-900 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sobrio-700">
+            <p>&copy; <?php echo date('Y'); ?> <?php echo $empresa['nombre']; ?>. Todos los derechos reservados.</p>
+            
+            <div class="flex gap-4 text-sobrio-300">
+                <?php foreach ($contacto_directo['redes'] as $red): ?>
+                    <a href="<?php echo $red['url']; ?>" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+                        <?php echo $red['nombre']; ?>
+                    </a>
+                <?php endforeach; ?>
+                <a href="<?php echo $whatsapp_default_url; ?>" target="_blank" rel="noopener noreferrer" class="text-sobrio-whatsapp hover:underline">
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function redirectToWhatsApp(event) {
+            event.preventDefault();
+            const message = document.getElementById('wp-message').value;
+            const baseUrl = "<?php echo $contacto_directo['whatsapp']['base_url']; ?>";
+            const fullUrl = `${baseUrl}?text=${encodeURIComponent(message)}`;
+            window.open(fullUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
